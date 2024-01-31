@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23-jqury</title>
+    <!-- <script src="jqery.js"></script> -->
+
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+    <style>
+        
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.floor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  height: 100%;
+  width: 100%;
+}
+.size-zero {
+  height: 0;
+  width: 0;
+  display: inline-block;
+}
+.head {
+  height: 6vmin;
+  width: 6vmin;
+  background-color: aqua;
+  margin: 0 auto;
+}
+.abdomen, .legs {
+  display: flex;
+  justify-content: center;
+}
+.arm {
+  height: 10vmin;
+  width: 4vmin;
+  transform-origin: top;
+  border-radius: 2vmin;
+  background: white;
+  position: relative;
+  animation: rotate 2s linear infinite;
+}
+.arm::before {
+  content: '';
+  position: relative;
+  display: block;
+  height: 95%;
+  width: 100%;
+}
+@keyframes rotate {
+  25% {
+    transform: translateZ(0) rotate(-60deg);
+  }
+  75% {
+    transform: translateZ(0) rotate(+60deg);
+  }
+}
+#a1 {
+  left: -2vmin;
+}
+.middle-body {
+  height: 20vmin;
+  width: 15vmin;
+  border: 2vmin solid #11365d;
+  background: grey;
+  display: inline-block;
+}
+.link {
+  height: 10vmin;
+  width: 4vmin;
+  transform-origin: top;
+  border-radius: 2vmin;
+  background: rgb(168, 145, 145);
+  position: relative;
+}
+.link::before {
+  content: '';
+  position: relative;
+  display: block;
+  height: 95%;
+  width: 100%;
+}
+@keyframes rotate2 {
+  25% {
+    transform: translateZ(0) rotate(20deg);
+  }
+  75% {
+    transform: translateZ(0) rotate(-20deg);
+  }
+}
+.leg1 #l1 {
+  left: -2vmin;
+  animation: rotate2 1s linear infinite;
+}
+.leg1 #l2 {
+  animation: rotate2 1s linear infinite reverse;
+}
+.leg2 #l1 {
+  left: -2vmin;
+  animation: rotate2 1s linear infinite reverse;
+}
+.leg2 #l2 {
+  animation: rotate2 1s linear infinite;
+}
+.lower-body {
+  height: 20vmin;
+  width: 10vmin;
+  border: 2vmin solid #11365d00;
+  background: rgba(128, 128, 128, 0);
+  display: inline-block;
+}
+@keyframes updown {
+  25% {
+    transform: translate(2vmin,0vmin);
+    margin-top: 3vmin;
+  }
+  50% {
+    transform: translate(0vmin,0vmin);
+    margin-top: 0vmin;
+  }
+  75% {
+    transform: translate(-2vmin,0vmin);
+    margin-top: 3vmin;
+  }
+}
+.main-body {
+  animation: updown2 0.2s linear infinite;
+}
+@keyframes updown2 {
+  25% {
+    margin-top: 3vmin;
+  }
+  50% {
+    margin-top: 0vmin;
+  }
+  75% {
+    margin-top: 3vmin;
+  }
+}
+
+
+
+    </style>
+
+    
+    <div class="floor">
+        <div class="main-body">
+          <div class="head"></div>
+          <div class="abdomen">
+            <div class="hand size-zero">
+              <div class="arm" id="a1">
+                <div class="arm" id="a2">
+                  <div class="arm" id="a3"></div>
+                </div>
+              </div>
+            </div>
+            <div class="middle-body"></div>
+            <div class="hand size-zero">
+              <div class="arm" id="a1">
+                <div class="arm" id="a2">
+                  <div class="arm" id="a3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="legs">
+            <div class="leg leg1 size-zero">
+              <div class="link" id="l1">
+                <div class="link" id="l2">
+                </div>
+              </div>
+            </div>
+            <div class="lower-body"></div>
+            <div class="leg leg2 size-zero">
+              <div class="link" id="l1">
+                <div class="link" id="l2">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
